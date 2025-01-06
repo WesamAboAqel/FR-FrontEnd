@@ -1,0 +1,62 @@
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  color: #333;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-section h2 {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.person-item {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Space between items */
+}
+
+.person-image {
+  width: 40px; /* Set the width of the image */
+  height: 40px; /* Set the height of the image */
+  border-radius: 50%; /* Make it circular */
+  margin-right: 10px; /* Space between image and name */
+}
+
+/* Section-specific colors */
+.recognized h2 {
+  color: #28a745;
+}
+
+.unrecognized h2 {
+  color: #ffc107;
+}
+
+.flagged h2 {
+  color: #dc3545;
+}
