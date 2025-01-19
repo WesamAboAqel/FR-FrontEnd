@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AccessLogService } from '../access-log.service';
 import { AccessLog } from '../models/access-log.model';
 import { CommonModule } from '@angular/common';
+import {RouterLink} from "@angular/router";
 
 @Component({
     selector: 'app-access-logs',
     standalone: true,
-    imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
     templateUrl: './access-logs.component.html',
     styleUrls: ['./access-logs.component.css']
 })

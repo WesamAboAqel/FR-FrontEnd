@@ -5,11 +5,12 @@ import { signal } from '@angular/core';
 import { AuthorizedPerson } from '../models/authorized-person.model';
 import { UnauthorizedPerson } from '../models/unauthorized-person.model';
 import { FlaggedPerson } from '../models/flagged-person.model';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -20,7 +21,7 @@ export class DashboardComponent {
   authorizedPeople = signal<AuthorizedPerson[]>([]);
   unauthorizedPeople = signal<UnauthorizedPerson[]>([]);
   flaggedPeople = signal<FlaggedPerson[]>([]);
-  
+
   isLoadingAuthorized = signal<boolean>(false);
   isLoadingUnauthorized = signal<boolean>(false);
   isLoadingFlagged = signal<boolean>(false);
