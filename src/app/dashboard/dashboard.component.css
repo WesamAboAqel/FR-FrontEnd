@@ -1,62 +1,138 @@
+/* Dashboard Styles */
 .dashboard {
   padding: 20px;
+  background: url('/assets/test.jpg') no-repeat center center fixed;
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center center; /* Ensure it's centered */
+  min-height: 100vh; /* Full viewport height */
+  color: #fff; /* Adjust text color for better contrast */
+  font-family: 'Arial', sans-serif;
 }
 
+/* Dashboard Header */
 .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
 }
 
 .dashboard-header h1 {
-  color: #333;
+  font-size: 2rem;
+  color: #f1f1f1;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+.dashboard-header button {
+  background: #fff; /* White background */
+  color: #007bff; /* Blue text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.dashboard-header button:hover {
+  background: #f1f1f1; /* Light gray on hover */
+  box-shadow: 0 6px 8px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Dashboard Grid */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
+/* Dashboard Section */
 .dashboard-section {
-  background: white;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard-section h2 {
   margin-bottom: 20px;
-  color: #444;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
 }
 
+/* Loading Indicator */
 .loading {
   text-align: center;
   padding: 40px;
   font-size: 1.2rem;
-  color: #666;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* Person List */
 .person-item {
   display: flex; /* Use flexbox for alignment */
   align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Space between items */
+  margin-bottom: 15px; /* Space between items */
 }
 
 .person-image {
-  width: 40px; /* Set the width of the image */
-  height: 40px; /* Set the height of the image */
-  border-radius: 50%; /* Make it circular */
-  margin-right: 10px; /* Space between image and name */
+  width: 50px; /* Slightly larger for better visibility */
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #e0e0e0; /* Subtle border around the image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
 
-/* Section-specific colors */
-.recognized h2 {
-  color: #28a745;
+.person-name {
+  font-size: 1rem;
+  color: #444;
+  font-weight: 500;
 }
 
-.unrecognized h2 {
-  color: #ffc107;
+/* Section-Specific Colors */
+.dashboard-section.authorized h2 {
+  color: #28a745; /* Green for authorized */
 }
 
-.flagged h2 {
-  color: #dc3545;
+.dashboard-section.unauthorized h2 {
+  color: #003366; /* Dark Blue for unauthorized */
+}
+
+.dashboard-section.flagged h2 {
+  color: #dc3545; /* Red for flagged */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    margin-bottom: 15px;
+  }
+
+  .dashboard-header button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.25rem;
+  }
 }

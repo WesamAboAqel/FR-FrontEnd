@@ -1,0 +1,72 @@
+/* General styles for the form container */
+form {
+  max-width: 400px;
+  margin: 50px auto; /* Centers form horizontally and adds vertical spacing */
+  padding: 20px 15px; /* Ensures balanced padding on all sides */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styles */
+form label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input styles */
+form input[type="email"],
+form input[type="password"] {
+  width: calc(100% - 20px); /* Avoid horizontal overflow by subtracting padding */
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styles */
+form button[type="submit"] {
+  width: calc(100% - 20px); /* Consistent width with inputs */
+  padding: 10px;
+  margin: 0 auto; /* Center-aligns button */
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Link styles */
+a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

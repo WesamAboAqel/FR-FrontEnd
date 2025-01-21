@@ -1,0 +1,102 @@
+/* Background image for the page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://blog.dormakaba.com/tachyon/2020/04/dormakaba-Blog-Post-pictures-_-1024-x-683-83.jpg?resize=800%2C534&zoom=1') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* General styles for the form container */
+form {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  padding: 25px 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Label styles */
+form label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input styles */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styles */
+form button[type="submit"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Link styles */
+a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #007bff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 480px) {
+  form {
+    padding: 20px 15px;
+  }
+
+  form button[type="submit"],
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: calc(100% - 10px);
+  }
+}

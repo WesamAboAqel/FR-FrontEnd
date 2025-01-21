@@ -1,15 +1,15 @@
 <div>
-    <button routerLink="/dashboard">Dashboard</button>
+  <button routerLink="/dashboard">Dashboard</button>
 </div>
 <div *ngIf="isLoading">Loading access logs...</div>
 <ul *ngIf="!isLoading">
-    <li *ngFor="let log of accessLogs">
-        <p><strong>Log ID:</strong> {{ log.logID }}</p>
-        <p><strong>Camera ID:</strong> {{ log.cameraID }}</p>
-        <p><strong>Access Time:</strong> {{ log.accessTime }}</p>
-        <p><strong>Access Granted:</strong> {{ log.accessGranted }}</p>
-        <p><strong>Account Type:</strong> {{ log.accountType }}</p>
-        <p><strong>Person Name:</strong> {{ log.personName }}</p>
-        <hr />
-    </li>
+  <li *ngFor="let log of accessLogs">
+    <p><strong>Log ID:</strong> {{ log.logID }}</p>
+    <p><strong>Camera ID:</strong> {{ log.cameraID }}</p>
+    <p><strong>Access Time:</strong> {{ log.accessTime }}</p>
+    <p><strong>Access Granted:</strong> {{ log.accessGranted }}</p>
+    <p><strong>Account Type:</strong> {{ log.accountType }}</p>
+    <p><strong>Person Name:</strong> {{ log.personName }}</p>
+    <hr />
+  </li>
 </ul>

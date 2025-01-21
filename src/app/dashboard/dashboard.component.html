@@ -1,44 +1,70 @@
 <div class="dashboard">
+  <!-- Dashboard Header -->
   <div class="dashboard-header">
     <h1>Dashboard</h1>
     <button routerLink="/access-logs">View Access Logs</button>
   </div>
 
+  <!-- Dashboard Grid -->
   <div class="dashboard-grid">
-    <div class="dashboard-section">
+    <!-- Authorized People Section -->
+    <div class="dashboard-section authorized">
       <h2>Authorized People</h2>
-      <div *ngIf="isLoadingAuthorized()" class="loading">Loading authorized names...</div>
-      <ul *ngIf="!isLoadingAuthorized()">
-        <li *ngFor="let person of authorizedPeople()" class="person-item">
-          <img [src]="person.image ? person.image : 'assets/default-image.jpeg'" 
-               class="person-image" />
-          <span>{{ person.name }}</span>
-        </li>
-      </ul>
+      <ng-container *ngIf="isLoadingAuthorized(); else authorizedList">
+        <div class="loading">Loading authorized names...</div>
+      </ng-container>
+      <ng-template #authorizedList>
+        <ul class="person-list">
+          <li *ngFor="let person of authorizedPeople()" class="person-item">
+            <img
+              [src]="person.image ? person.image : 'assets/default-image.jpeg'"
+              class="person-image"
+              alt="Authorized Person Image"
+            />
+            <span class="person-name">{{ person.name }}</span>
+          </li>
+        </ul>
+      </ng-template>
     </div>
 
-    <div class="dashboard-section">
+    <!-- Unauthorized People Section -->
+    <div class="dashboard-section unauthorized">
       <h2>Unauthorized People</h2>
-      <div *ngIf="isLoadingUnauthorized()" class="loading">Loading unauthorized names...</div>
-      <ul *ngIf="!isLoadingUnauthorized()">
-        <li *ngFor="let person of unauthorizedPeople()" class="person-item">
-          <img [src]="person.image ? person.image : 'assets/default-image.jpeg'" 
-               class="person-image" />
-          <span>{{ person.name }}</span>
-        </li>
-      </ul>
+      <ng-container *ngIf="isLoadingUnauthorized(); else unauthorizedList">
+        <div class="loading">Loading unauthorized names...</div>
+      </ng-container>
+      <ng-template #unauthorizedList>
+        <ul class="person-list">
+          <li *ngFor="let person of unauthorizedPeople()" class="person-item">
+            <img
+              [src]="person.image ? person.image : 'assets/default-image.jpeg'"
+              class="person-image"
+              alt="Unauthorized Person Image"
+            />
+            <span class="person-name">{{ person.name }}</span>
+          </li>
+        </ul>
+      </ng-template>
     </div>
 
-    <div class="dashboard-section">
+    <!-- Flagged People Section -->
+    <div class="dashboard-section flagged">
       <h2>Flagged People</h2>
-      <div *ngIf="isLoadingFlagged()" class="loading">Loading flagged names...</div>
-      <ul *ngIf="!isLoadingFlagged()">
-        <li *ngFor="let person of flaggedPeople()" class="person-item">
-          <img [src]="person.image ? person.image : 'assets/default-image.jpeg'" 
-               class="person-image" />
-          <span>{{person.name}}</span>
-        </li>
-      </ul>
+      <ng-container *ngIf="isLoadingFlagged(); else flaggedList">
+        <div class="loading">Loading flagged names...</div>
+      </ng-container>
+      <ng-template #flaggedList>
+        <ul class="person-list">
+          <li *ngFor="let person of flaggedPeople()" class="person-item">
+            <img
+              [src]="person.image ? person.image : 'assets/default-image.jpeg'"
+              class="person-image"
+              alt="Flagged Person Image"
+            />
+            <span class="person-name">{{ person.name }}</span>
+          </li>
+        </ul>
+      </ng-template>
     </div>
   </div>
 </div>
